@@ -3,9 +3,9 @@ package uebung01.aufgabe01;
 public class RationalNumber {
 
 	public static void main(String[] args) {
-		RationalNumber rn1 = new RationalNumber(2, 6);
-		RationalNumber rn2 = new RationalNumber(3, 4);
-		RationalNumber rn3 = rn1.add(rn2);
+		RationalNumber rn1 = new RationalNumber(3, 5);
+		RationalNumber rn2 = new RationalNumber(15, 11);
+		RationalNumber rn3 = rn1.multiply(rn2);
 		System.out.println(rn3.getNumerator() + "/" + rn3.getDenominator() + " (" + rn3.getDecimalValue() + ")");
 	}
 
@@ -61,7 +61,7 @@ public class RationalNumber {
 		if (r.getNumerator() == 0) {
 			throw new IllegalArgumentException("Division by 0 is not possible!");
 		}
-		return multiply(new RationalNumber(getDenominator(), getNumerator()));
+		return multiply(new RationalNumber(r.getDenominator(), r.getNumerator()));
 	}
 
 	private void reduce() {
