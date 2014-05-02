@@ -9,7 +9,7 @@ public class IntervalChooser<T extends Interval> {
 
 	public static void main(String[] args) {
 
-		int numberOfIntervals = 15;
+		int numberOfIntervals = 10;
 		Random r = new Random();
 
 		System.out.println("initiale Menge:");
