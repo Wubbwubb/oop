@@ -1,5 +1,6 @@
 package uebung01.aufgabe04;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,7 +15,7 @@ public class IntervalChooser<T extends Interval> {
 
 		System.out.println("initiale Menge:");
 
-		LinkedList<Interval> intervals = new LinkedList<>();
+		Collection<Interval> intervals = new LinkedList<>();
 		for (int i = 0; i < numberOfIntervals; i++) {
 			double inf = r.nextInt(100);
 			double sup = r.nextInt(100);
@@ -32,26 +33,26 @@ public class IntervalChooser<T extends Interval> {
 
 		System.out.println("\nnicht \u00fcberlappende Menge:");
 
-		List<Interval> nonOverlappings = chooser.getNonOverlappingIntervals();
+		Collection<Interval> nonOverlappings = chooser.getNonOverlappingIntervals();
 		for (Interval interval : nonOverlappings) {
 			System.out.println(interval);
 		}
 
 	}
 
-	private List<T> intervals;
+	private Collection<T> intervals;
 	private IntervalComparator<T> comparator;
 
-	public IntervalChooser(List<T> pIntervals) {
+	public IntervalChooser(Collection<T> pIntervals) {
 		setIntervals(pIntervals);
 		setComparator(new IntervalComparator<T>());
 	}
 
-	public List<T> getIntervals() {
+	public Collection<T> getIntervals() {
 		return intervals;
 	}
 
-	private void setIntervals(List<T> intervals) {
+	private void setIntervals(Collection<T> intervals) {
 		this.intervals = intervals;
 	}
 
@@ -63,7 +64,7 @@ public class IntervalChooser<T extends Interval> {
 		this.comparator = comparator;
 	}
 
-	public List<T> getNonOverlappingIntervals() {
+	public Collection<T> getNonOverlappingIntervals() {
 		List<T> tmpIntervals = new LinkedList<>(getIntervals());
 
 		Collections.sort(tmpIntervals, getComparator());
