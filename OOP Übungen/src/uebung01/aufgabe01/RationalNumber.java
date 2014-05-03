@@ -1,12 +1,19 @@
 package uebung01.aufgabe01;
 
-public class RationalNumber {
+/**
+ * Diese Klasse repr&auml;sentiert rationale Zahlen. Da rationale Zahlen durch Br&uuml;che dargestellt werden
+ * k&ouml;nnen, werden intern zwei ganze Zahlen (Z&auml;hler und Nenner) gespeichert. Diese beiden Zahlen werden als
+ * long abgespeichert, um den Wertebereich m&ouml;glichst gro&szlig; zu gestalten.
+ *
+ * @author Maximilian Schmitt
+ */
+public class RationalNumber implements Comparable<RationalNumber> {
 
 	public static void main(String[] args) {
 		RationalNumber rn1 = new RationalNumber(3, 5);
 		RationalNumber rn2 = new RationalNumber(15, 11);
 		RationalNumber rn3 = rn1.multiply(rn2);
-		System.out.println(rn3.getNumerator() + "/" + rn3.getDenominator() + " (" + rn3.getDecimalValue() + ")");
+		System.out.println(rn3.toString());
 	}
 
 	private long numerator;
@@ -20,6 +27,8 @@ public class RationalNumber {
 
 		setNumerator(pNumerator);
 		setDenominator(pDenominator);
+
+		// Alle Objekte sind zu jeder Zeit gekuerzt
 		reduce();
 	}
 
@@ -84,6 +93,33 @@ public class RationalNumber {
 
 	private static long ggt(long a, long b) {
 		return (b == 0) ? a : ggt(b, a % b);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (obj instanceof RationalNumber) {
+			// Zwei Objekte sind genau dann gleich, wenn die Dezimalwerte gleich sind
+			return getDecimalValue() == ((RationalNumber) obj).getDecimalValue();
+		}
+		return false;
+	}
+
+	@Override
+	public String toString() {
+		return getNumerator() + "/" + getDenominator() + " (" + getDecimalValue() + ")";
+	}
+
+	@Override
+	public int compareTo(RationalNumber r) {
+		double decimal = getDecimalValue();
+		double decimalR = getDecimalValue();
+		if (decimal < decimalR) {
+			return -1;
+		}
+		if (decimal > decimalR) {
+			return 1;
+		}
+		return 0;
 	}
 
 }
