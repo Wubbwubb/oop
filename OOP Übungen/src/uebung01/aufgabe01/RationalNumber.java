@@ -112,7 +112,7 @@ public class RationalNumber implements Comparable<RationalNumber> {
 	@Override
 	public int compareTo(RationalNumber r) {
 		double decimal = getDecimalValue();
-		double decimalR = getDecimalValue();
+		double decimalR = r.getDecimalValue();
 		if (decimal < decimalR) {
 			return -1;
 		}
