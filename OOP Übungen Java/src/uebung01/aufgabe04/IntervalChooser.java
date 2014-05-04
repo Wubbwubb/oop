@@ -1,8 +1,8 @@
 package uebung01.aufgabe04;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.Random;
 
@@ -15,7 +15,7 @@ public class IntervalChooser<T extends Interval> {
 
 		System.out.println("initiale Menge:");
 
-		Collection<Interval> intervals = new LinkedList<>();
+		Collection<Interval> intervals = new ArrayList<>(numberOfIntervals);
 		for (int i = 0; i < numberOfIntervals; i++) {
 			double inf = r.nextInt(100);
 			double sup = r.nextInt(100);
@@ -65,7 +65,7 @@ public class IntervalChooser<T extends Interval> {
 	}
 
 	public Collection<T> getNonOverlappingIntervals() {
-		List<T> tmpIntervals = new LinkedList<>(getIntervals());
+		List<T> tmpIntervals = new ArrayList<>(getIntervals());
 
 		Collections.sort(tmpIntervals, getComparator());
 
