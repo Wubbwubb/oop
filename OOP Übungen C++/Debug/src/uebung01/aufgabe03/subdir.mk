@@ -17,7 +17,7 @@ CPP_DEPS += \
 src/uebung01/aufgabe03/%.o: ../src/uebung01/aufgabe03/%.cpp
 	@echo 'Building file: $<'
 	@echo 'Invoking: GCC C++ Compiler'
-	g++ -std=c++0x -I"C:\Users\Max\workspace_cpp\OOP Übungen C++\src" -O1 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	g++ -std=c++0x -I"C:\Users\Max\git\oop\OOP Übungen C++\src" -O1 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 
