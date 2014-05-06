@@ -5,7 +5,10 @@ public class Interval {
 	private double inf;
 	private double sup;
 
-	public Interval(double pInf, double pSup) {
+	public Interval(double pInf, double pSup) throws IllegalArgumentException {
+		if (pInf > pSup) {
+			throw new IllegalArgumentException("Infimum must not be smaller than Supremum!");
+		}
 		setInf(pInf);
 		setSup(pSup);
 	}
@@ -32,7 +35,7 @@ public class Interval {
 
 	@Override
 	public String toString() {
-		return "[" + getInf() + ";" + getSup() + "]";
+		return "[" + getInf() + ", " + getSup() + "]";
 	}
 
 }

@@ -10,15 +10,16 @@ public class IntervalChooser<T extends Interval> {
 
 	public static void main(String[] args) {
 
-		int numberOfIntervals = 10;
+		final int numberOfIntervals = 20;
+		final int randomRange = 200;
 		Random r = new Random();
 
 		System.out.println("initiale Menge:");
 
 		Collection<Interval> intervals = new ArrayList<>(numberOfIntervals);
 		for (int i = 0; i < numberOfIntervals; i++) {
-			double inf = r.nextInt(100);
-			double sup = r.nextInt(100);
+			double inf = r.nextInt(randomRange);
+			double sup = r.nextInt(randomRange);
 			if (inf > sup) {
 				double tmp = inf;
 				inf = sup;
