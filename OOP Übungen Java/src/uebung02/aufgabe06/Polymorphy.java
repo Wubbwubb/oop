@@ -11,7 +11,7 @@ public class Polymorphy {
 		// ###### ad hoc ######
 		// ####################
 
-		// ###### überladen ######
+		// ###### ueberladen ######
 
 		// + Operator wird fuer Klasse String als Konkatenation ueberladen
 		String string1 = "Hallo" + " " + "Welt";
