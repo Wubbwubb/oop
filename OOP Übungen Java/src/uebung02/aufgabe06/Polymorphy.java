@@ -13,7 +13,7 @@ public class Polymorphy {
 
 		// ###### überladen ######
 
-		// + Operator wird für Klasse String als Konkatenation überladen
+		// + Operator wird fuer Klasse String als Konkatenation ueberladen
 		String string1 = "Hallo" + " " + "Welt";
 		System.out.println(string1);
 
@@ -30,7 +30,7 @@ public class Polymorphy {
 
 		// ###### parametrisch ######
 
-		// Der Liste list dürfen nur Objekte vom Typ Integer hinzugefügt werden
+		// Der Liste list duerfen nur Objekte vom Typ Integer hinzugefuegt werden
 		List<Integer> list = new LinkedList<Integer>();
 		list.add(new Integer(5));
 
