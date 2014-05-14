@@ -10,8 +10,9 @@
 
 #define QUICKSORT 1
 #define NEWTON 2
+#define CONNECT_FOUR 3
+#define GAME_OF_LIFE 4
 
-// #define MAINMETHOD QUICKSORT
-#define MAINMETHOD NEWTON
+#define MAINMETHOD CONNECT_FOUR
 
 #endif /* MAINCHOOSER_H_ */
