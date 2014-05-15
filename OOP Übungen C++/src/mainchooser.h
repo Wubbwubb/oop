@@ -13,6 +13,6 @@
 #define CONNECT_FOUR 3
 #define GAME_OF_LIFE 4
 
-#define MAINMETHOD CONNECT_FOUR
+#define MAINMETHOD GAME_OF_LIFE
 
 #endif /* MAINCHOOSER_H_ */
