@@ -4,15 +4,15 @@ import java.util.Collection;
 
 public class ParallelCircuit extends Circuit {
 
-	public ParallelCircuit(Collection<Resistor> pResistors) {
+	public ParallelCircuit(Collection<ICircuit> pResistors) {
 		super(pResistors);
 	}
 
 	@Override
 	public double getTotalValue() {
 		double totalValue = 0.0;
-		for (Resistor resistor : getResistors()) {
-			totalValue += (1 / resistor.getTotalValue());
+		for (ICircuit circuit : getCircuits()) {
+			totalValue += (1 / circuit.getTotalValue());
 		}
 		return 1 / totalValue;
 	}

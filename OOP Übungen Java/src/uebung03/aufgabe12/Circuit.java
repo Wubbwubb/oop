@@ -4,21 +4,21 @@ import java.util.Collection;
 
 public abstract class Circuit implements ICircuit {
 
-	private Collection<Resistor> resistors;
+	private Collection<ICircuit> circuits;
 
-	public Circuit(Collection<Resistor> pResistors) {
-		if (pResistors == null || pResistors.isEmpty()) {
+	public Circuit(Collection<ICircuit> pCircuits) {
+		if (pCircuits == null || pCircuits.isEmpty()) {
 			throw new IllegalArgumentException("pResistors must contain at least one Resistor");
 		}
-		setResistors(pResistors);
+		setCircuits(pCircuits);
 	}
 
-	protected Collection<Resistor> getResistors() {
-		return resistors;
+	protected Collection<ICircuit> getCircuits() {
+		return circuits;
 	}
 
-	private void setResistors(Collection<Resistor> resistors) {
-		this.resistors = resistors;
+	private void setCircuits(Collection<ICircuit> circuits) {
+		this.circuits = circuits;
 	}
 
 	@Override
@@ -26,7 +26,7 @@ public abstract class Circuit implements ICircuit {
 
 	@Override
 	public int getNumberOfResistors() {
-		return getResistors().size();
+		return getCircuits().size();
 	}
 
 }

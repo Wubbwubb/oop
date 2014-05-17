@@ -4,15 +4,15 @@ import java.util.Collection;
 
 public class RowCircuit extends Circuit {
 
-	public RowCircuit(Collection<Resistor> pResistors) {
+	public RowCircuit(Collection<ICircuit> pResistors) {
 		super(pResistors);
 	}
 
 	@Override
 	public double getTotalValue() {
 		double totalValue = 0.0;
-		for (Resistor resistor : getResistors()) {
-			totalValue += resistor.getTotalValue();
+		for (ICircuit circuit : getCircuits()) {
+			totalValue += circuit.getTotalValue();
 		}
 		return totalValue;
 	}
