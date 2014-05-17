@@ -4,8 +4,8 @@ import java.util.Collection;
 
 public class RowCircuit extends Circuit {
 
-	public RowCircuit(Collection<ICircuit> pResistors) {
-		super(pResistors);
+	public RowCircuit(Collection<ICircuit> pCircuits) {
+		super(pCircuits);
 	}
 
 	@Override

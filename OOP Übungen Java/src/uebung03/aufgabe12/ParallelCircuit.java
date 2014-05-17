@@ -4,8 +4,8 @@ import java.util.Collection;
 
 public class ParallelCircuit extends Circuit {
 
-	public ParallelCircuit(Collection<ICircuit> pResistors) {
-		super(pResistors);
+	public ParallelCircuit(Collection<ICircuit> pCircuits) {
+		super(pCircuits);
 	}
 
 	@Override

@@ -8,7 +8,7 @@ public abstract class Circuit implements ICircuit {
 
 	public Circuit(Collection<ICircuit> pCircuits) {
 		if (pCircuits == null || pCircuits.isEmpty()) {
-			throw new IllegalArgumentException("pResistors must contain at least one Resistor");
+			throw new IllegalArgumentException("pCircuits must contain at least one Circuit");
 		}
 		setCircuits(pCircuits);
 	}
@@ -22,11 +22,12 @@ public abstract class Circuit implements ICircuit {
 	}
 
 	@Override
-	public abstract double getTotalValue();
-
-	@Override
 	public int getNumberOfResistors() {
-		return getCircuits().size();
+		int numberOfResistors = 0;
+		for (ICircuit circuit : getCircuits()) {
+			numberOfResistors += circuit.getNumberOfResistors();
+		}
+		return numberOfResistors;
 	}
 
 }
