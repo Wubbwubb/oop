@@ -2,18 +2,18 @@ package uebung03.aufgabe12;
 
 public class Resistor implements ICircuit {
 
-	private double value;
+	private double resistance;
 
-	public Resistor(double pValue) {
-		if (pValue == 0.) {
-			throw new IllegalArgumentException("pValue must not be zero");
+	public Resistor(double pResistance) {
+		if (pResistance == 0.) {
+			throw new IllegalArgumentException("pResistance must not be zero");
 		}
-		value = pValue;
+		resistance = pResistance;
 	}
 
 	@Override
-	public double getTotalValue() {
-		return value;
+	public double getResistance() {
+		return resistance;
 	}
 
 	@Override

@@ -2,17 +2,17 @@ package uebung03.aufgabe12;
 
 import java.util.Collection;
 
-public class RowCircuit extends Circuit {
+public class SeriesCircuit extends AbstractCircuit {
 
-	public RowCircuit(Collection<ICircuit> pCircuits) {
+	public SeriesCircuit(Collection<ICircuit> pCircuits) {
 		super(pCircuits);
 	}
 
 	@Override
-	public double getTotalValue() {
+	public double getResistance() {
 		double totalValue = 0.0;
 		for (ICircuit circuit : getCircuits()) {
-			totalValue += circuit.getTotalValue();
+			totalValue += circuit.getResistance();
 		}
 		return totalValue;
 	}

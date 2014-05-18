@@ -14,18 +14,18 @@ public class TestCircuit {
 		circuits1.add(r1);
 		circuits1.add(r2);
 
-		RowCircuit rc1 = new RowCircuit(circuits1);
-		System.out.println("row: " + rc1.getTotalValue() + " - #Resistors: " + rc1.getNumberOfResistors());
+		SeriesCircuit rc1 = new SeriesCircuit(circuits1);
+		System.out.println("row: " + rc1.getResistance() + " - #Resistors: " + rc1.getNumberOfResistors());
 
 		ParallelCircuit pc1 = new ParallelCircuit(circuits1);
-		System.out.println("parallel: " + pc1.getTotalValue() + " - #Resistors: " + pc1.getNumberOfResistors());
+		System.out.println("parallel: " + pc1.getResistance() + " - #Resistors: " + pc1.getNumberOfResistors());
 
 		Collection<ICircuit> circuits2 = new LinkedList<>();
 		circuits2.add(rc1);
 		circuits2.add(pc1);
 
-		RowCircuit rc2 = new RowCircuit(circuits2);
-		System.out.println("parallel: " + rc2.getTotalValue() + " - #Resistors: " + rc2.getNumberOfResistors());
+		SeriesCircuit rc2 = new SeriesCircuit(circuits2);
+		System.out.println("parallel: " + rc2.getResistance() + " - #Resistors: " + rc2.getNumberOfResistors());
 
 	}
 
