@@ -15,37 +15,26 @@ public class StartState implements AutomatState {
 		System.out.println(" 4 - Produkt ausw\u00e4hlen");
 		System.out.println(" 5 - ausschalten");
 
-		Scanner scanner = new Scanner(System.in);
-		String s;
-		int action = 0;
-		try {
-			s = scanner.nextLine();
-			scanner.reset();
-			action = Integer.parseInt(s);
-			scanner.close();
-		} catch (Exception e) {
-			scanner.close();
-			automat.setState(new StartState());
-		}
+		String s = new Scanner(System.in).next();
 
-		switch (action) {
-		case 1:
+		switch (s) {
+		case "1":
 			automat.setState(new ShowAutomatState());
 			break;
-		case 2:
+		case "2":
 			automat.setState(new MoneyInState());
 			break;
-		case 3:
+		case "3":
 			automat.setState(new MoneyBackState());
 			break;
-		case 4:
+		case "4":
 			automat.setState(new ChooseState());
 			break;
-		case 5:
+		case "5":
 			System.exit(0);
 			break;
 		default:
-			automat.setState(new StartState());
+			automat.setState(this);
 			break;
 		}
 	}

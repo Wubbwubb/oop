@@ -17,4 +17,9 @@ public class Candy extends Product {
 		this.weight = weight;
 	}
 
+	@Override
+	public String toString() {
+		return getName() + ", " + getWeight() + "g, " + getPrice() + "€";
+	}
+
 }

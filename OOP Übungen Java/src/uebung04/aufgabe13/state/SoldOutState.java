@@ -6,7 +6,8 @@ public class SoldOutState implements AutomatState {
 
 	@Override
 	public void process(Automat automat) {
-		
+		System.out.println("Das Produkt ist ausverkauft");
+		automat.setState(new StartState());
 	}
 
 }

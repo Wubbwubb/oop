@@ -17,4 +17,9 @@ public class Drink extends Product {
 		this.volume = weight;
 	}
 
+	@Override
+	public String toString() {
+		return getName() + ", " + getVolume() + "l, " + getPrice() + "€";
+	}
+
 }
