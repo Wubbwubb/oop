@@ -18,8 +18,8 @@ public class Candy extends Product {
 	}
 
 	@Override
-	public String toString() {
-		return getName() + ", " + getWeight() + "g, " + getPrice() + "€";
+	public String getDetails() {
+		return getWeight() + "g";
 	}
 
 }

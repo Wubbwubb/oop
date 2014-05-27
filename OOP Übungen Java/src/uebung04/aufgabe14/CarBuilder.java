@@ -1,41 +1,62 @@
 package uebung04.aufgabe14;
 
-public abstract class CarBuilder {
+public class CarBuilder {
 
-	private Car car;
+	private final int topSpeed;
+	private final int power;
+	private final FuelType fuelType;
 
-	public void buildCar() {
-		setCar(new Car());
+	private boolean cdPlayer = true;
+	private boolean sunroof = false;
+	private boolean aircon = true;
+
+	public CarBuilder(int pTopSpeed, int pPower, FuelType pFuelType) {
+		this.topSpeed = pTopSpeed;
+		this.power = pPower;
+		this.fuelType = pFuelType;
 	}
 
-	protected Car getCar() {
-		return car;
+	public int getTopSpeed() {
+		return topSpeed;
 	}
 
-	private void setCar(Car car) {
-		this.car = car;
+	public int getPower() {
+		return power;
 	}
 
-	public abstract void setTopSpeed();
-
-	public abstract void setPower();
-
-	public abstract void setFuelType();
-
-	public void setCDPlayer() {
-		getCar().setCdPlayer(true);
+	public FuelType getFuelType() {
+		return fuelType;
 	}
 
-	public void setSunroof() {
-		getCar().setSunroof(false);
+	public boolean hasCDPlayer() {
+		return cdPlayer;
 	}
 
-	public void setAircon() {
-		getCar().setAircon(true);
+	public boolean hasSunroof() {
+		return sunroof;
 	}
 
-	public Car deliver() {
-		return car;
+	public boolean hasAirCondition() {
+		return aircon;
+	}
+
+	public CarBuilder cdPlayer(boolean cdPlayer) {
+		this.cdPlayer = cdPlayer;
+		return this;
+	}
+
+	public CarBuilder sunroof(boolean sunroof) {
+		this.sunroof = sunroof;
+		return this;
+	}
+
+	public CarBuilder airCondition(boolean airCondition) {
+		this.aircon = airCondition;
+		return this;
+	}
+
+	public Car build() {
+		return new Car(this);
 	}
 
 }

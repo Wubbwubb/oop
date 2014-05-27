@@ -2,60 +2,45 @@ package uebung04.aufgabe14;
 
 public class Car {
 
-	private int topSpeed;
-	private int power;
-	private FuelType fuelType;
+	private final int topSpeed;
+	private final int power;
+	private final FuelType fuelType;
 
-	private boolean cdPlayer;
-	private boolean sunroof;
-	private boolean aircon;
+	private final boolean cdPlayer;
+	private final boolean sunroof;
+	private final boolean aircon;
+
+	public Car(CarBuilder builder) {
+		this.topSpeed = builder.getTopSpeed();
+		this.power = builder.getPower();
+		this.fuelType = builder.getFuelType();
+		this.cdPlayer = builder.hasCDPlayer();
+		this.sunroof = builder.hasSunroof();
+		this.aircon = builder.hasAirCondition();
+	}
 
 	public int getTopSpeed() {
 		return topSpeed;
-	}
-
-	public void setTopSpeed(int topSpeed) {
-		this.topSpeed = topSpeed;
 	}
 
 	public int getPower() {
 		return power;
 	}
 
-	public void setPower(int power) {
-		this.power = power;
-	}
-
 	public FuelType getFuelType() {
 		return fuelType;
-	}
-
-	public void setFuelType(FuelType fuelType) {
-		this.fuelType = fuelType;
 	}
 
 	public boolean hasCdPlayer() {
 		return cdPlayer;
 	}
 
-	public void setCdPlayer(boolean cdPlayer) {
-		this.cdPlayer = cdPlayer;
-	}
-
 	public boolean hasSunroof() {
 		return sunroof;
 	}
 
-	public void setSunroof(boolean sunroof) {
-		this.sunroof = sunroof;
-	}
-
 	public boolean hasAircon() {
 		return aircon;
-	}
-
-	public void setAircon(boolean aircon) {
-		this.aircon = aircon;
 	}
 
 	@Override

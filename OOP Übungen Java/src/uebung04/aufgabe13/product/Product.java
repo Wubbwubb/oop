@@ -26,4 +26,11 @@ public abstract class Product {
 		this.price = price;
 	}
 
+	public abstract String getDetails();
+
+	@Override
+	public String toString() {
+		return getName() + " " + getDetails() + ", Preis: " + getPrice() + "€";
+	}
+
 }

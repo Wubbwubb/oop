@@ -18,8 +18,8 @@ public class Drink extends Product {
 	}
 
 	@Override
-	public String toString() {
-		return getName() + ", " + getVolume() + "l, " + getPrice() + "€";
+	public String getDetails() {
+		return getVolume() + "l";
 	}
 
 }
