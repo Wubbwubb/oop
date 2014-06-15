@@ -13,7 +13,9 @@ public class ChooseState implements AutomatState {
 
 		System.out.println("Produkt ausw\u00e4hlen");
 
-		String s = new Scanner(System.in).next();
+		Scanner scanner = new Scanner(System.in);
+		String s = scanner.next();
+		scanner.close();
 
 		try {
 			int id = Integer.parseInt(s);
