@@ -1,8 +1,6 @@
 #include <iostream>
 #include <mainchooser.h>
 
-const int EXIT_CODE = 0;
-
 double newton(double (*f1)(double), double (*f2)(double), double x, int n) {
 	if (n > 0) {
 		return newton(f1, f2, x - (f1(x) / f2(x)), n - 1);
@@ -29,6 +27,6 @@ int main() {
 
 	std::cout << newton(f1, f2, initialX, recursionCount);
 
-	return EXIT_CODE;
+	return 0;
 }
 #endif

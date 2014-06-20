@@ -2,8 +2,6 @@
 #include <mainchooser.h>
 #include <vector>
 
-const int EXIT_CODE = 0;
-
 const int ROWS = 6;
 const int COLUMNS = 7;
 
@@ -31,7 +29,7 @@ int main() {
 
 	play(player1, player2);
 
-	return EXIT_CODE;
+	return 0;
 }
 #endif
 

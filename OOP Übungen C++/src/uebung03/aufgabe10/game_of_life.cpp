@@ -2,8 +2,6 @@
 #include <mainchooser.h>
 #include <vector>
 
-const int EXIT_CODE = 0;
-
 void gameOfLife(std::vector<bool>, int, int, int);
 void printBoard(std::vector<bool>*, int, int);
 int countNeighbors(std::vector<bool>*, int, int, int, int);
@@ -28,7 +26,7 @@ int main() {
 
 	gameOfLife(board, rows, columns, generations);
 
-	return EXIT_CODE;
+	return 0;
 }
 #endif
 

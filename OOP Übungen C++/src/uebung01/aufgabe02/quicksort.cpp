@@ -4,8 +4,6 @@
 #include <time.h>
 #include <mainchooser.h>
 
-const int EXIT_CODE = 0;
-
 int partition(int* a, int l, int r) {
 	int pivot = a[r];
 	int i = l;
@@ -60,6 +58,6 @@ int main() {
 		}
 		std::cout << a[i];
 	}
-	return EXIT_CODE;
+	return 0;
 }
 #endif

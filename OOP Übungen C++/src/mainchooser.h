@@ -12,7 +12,8 @@
 #define NEWTON 2
 #define CONNECT_FOUR 3
 #define GAME_OF_LIFE 4
+#define STACK 5
 
-#define MAINMETHOD GAME_OF_LIFE
+#define MAINMETHOD STACK
 
 #endif /* MAINCHOOSER_H_ */
