@@ -4,6 +4,7 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 public class RingBuffer<E> implements Collection<E> {
 
@@ -12,7 +13,7 @@ public class RingBuffer<E> implements Collection<E> {
 	private int nextIndex;
 	private int firstIndex;
 
-	private ArrayList<E> list;
+	private List<E> list;
 
 	public RingBuffer(int capacity) {
 		this.capacity = capacity;
